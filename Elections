@@ -1,0 +1,42 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<queue>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    queue<char>q1;
+    queue<char>q2;
+    bool flag=true;
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='A'){
+            q1.push(s[i]);
+        }
+        else if(s[i]=='B'){
+            q2.push(s[i]);
+        }
+        else{
+            if(flag){
+                q1.push(s[i]);
+                flag=false;
+            }
+            else{
+                q2.push(s[i]);
+                flag=true;
+            }
+        }
+    }
+    if(q1.size()==q2.size()){
+        cout<<"Coalition government";
+    }
+    else if(q1.size()>q2.size()){
+        cout<<'A';
+    }
+    else{
+        cout<<'B';
+    }
+    return 0;
+}
