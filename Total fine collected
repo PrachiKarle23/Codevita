@@ -11,21 +11,21 @@ int main() {
    }
    int X,D;
    cin>>X>>D;
-   int cnt=0;
-   if(D%2!=0){
-       for(int i=0;i<n;i++){
+    int cnt1=0,cnt2=0;
+    for(int i=0;i<n;i++){
            if(a[i]%2==0){
-               cnt++;
+               cnt1++;
            }
-       }
+           else{
+               cnt2++;
+           }
+    }
+   if(D%2!=0){
+        cout<<X*cnt1;
    }
    else{
-       for(int i=0;i<n;i++){
-           if(a[i]%2!=0){
-               cnt++;
-           }
-       }
+       cout<<X*cnt2;
    }
-   cout<<X*cnt;
+  
    return 0;
 }
